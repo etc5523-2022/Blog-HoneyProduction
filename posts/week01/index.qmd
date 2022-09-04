@@ -19,10 +19,8 @@ The honey data comes from National Agricultural Statistics Service (NASS), Agric
 
 ```{r libraries, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
-library(dplyr)
 library(ggplot2)
 library(kableExtra)
-library(knitr)
 library(usmap)
 library(plotly)
 library(gt)
@@ -142,6 +140,9 @@ plotly::ggplotly(aveprice)
 
 ```
 
+From figure2, we can see that the majority of states have honey prices below 1.25 cents per pound, with the highest average unit prices in **"Nevada"**, **"Illinois"**, **"Kentucky"**, **"Virginia"**, **"Tennessee"**, and **"North Carolina"**. We can see that the top 5 states are all located on the west coast, where the wealthy gather and prices are higher than elsewhere, so we can understand why most of the states with higher honey unit prices are concentrated in this area of the map.
+
+In the case of North Carolina, the reason for the high honey prices may be due to the high quality of the honey produced in this state and the correspondingly higher honey prices.
 
 ## Origin data
 ```{r originaldata, echo = FALSE}
@@ -160,3 +161,19 @@ Aizen, Marcelo A.; Harder, Lawrence D. (9 June 2009). "The Global Stock of Domes
 
 *Honey industry facts.* (2017, March 6). National Honey Board. https://honey.com/newsroom/presskit/honey-industry-facts
 
+Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” _Journal of Open Source Software_, *4*(43), 1686. doi:10.21105/joss.01686 <https://doi.org/10.21105/joss.01686>.
+
+H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+
+Xie Y, Cheng J, Tan X (2022). _DT: A Wrapper of the JavaScript Library ‘DataTables’_. R package version 0.24, <https://CRAN.R-project.org/package=DT>.
+
+C. Sievert. Interactive Web-Based Data Visualization with R, plotly, and shiny. Chapman and Hall/CRC Florida, 2020.
+
+Hao Zhu (2021). kableExtra: Construct Complex Table with 'kable' and Pipe Syntax. R package version 1.3.4.
+  https://CRAN.R-project.org/package=kableExtra
+  
+Richard Iannone, Joe Cheng, Barret Schloerke and Ellis Hughes (2022). gt: Easily Create Presentation-Ready Display Tables. R
+  package version 0.7.0. https://CRAN.R-project.org/package=gt
+  
+Paolo Di Lorenzo (2022). usmap: US Maps Including Alaska and Hawaii. R package version 0.6.0.
+  https://CRAN.R-project.org/package=usmap
