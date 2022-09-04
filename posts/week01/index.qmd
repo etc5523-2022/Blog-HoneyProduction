@@ -9,41 +9,76 @@ toc: true
 
 ## Introduction
 
+Honey is a thick, golden, naturally occurring sweet substance produced by bees when they gather plant pollen and nectar. The nectar is combined with enzymes produced by the bees and stored in the honeycomb cells. Intracellular water is reduced and the product is concentrated. It has the sweetness of granulated sugar and is composed of monosaccharides and glucose, giving it a unique flavor. Humans have been using honey for at least 8,000 years.
 
+Where the most honey is produced each year depends largely on climate, soil, agriculture and politics. Crops grown or grown in an area will definitely play a role in nectar, pesticides and regulations, and it has to do with how many colonies you can put on any given acre without starving in a few months. Government protection programs can also help here. In 2018, the United States was the fifth-largest honey producer in the world, producing 69,104 tons (Pariona, 2020).
 
 ## Data description
 
-## Honey production changing trend by year
+The honey data comes from National Agricultural Statistics Service (NASS), Agricultural Statistics Board, U.S. Department of Agriculture, collected from the website of the [https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-05-21](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-05-21). The data set contains information about honey production, honey unit price, and other data for each state in the United States from 1998 to 2012, which has 626 observations and 8 variables.
 
 ```{r libraries, echo = FALSE, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(dplyr)
+library(ggplot2)
+library(kableExtra)
+library(knitr)
+library(usmap)
 library(plotly)
+library(gt)
 library(DT)
 ```
+
+```{r datadictionary, echo = FALSE, warning = FALSE, message = FALSE}
+tab <- matrix(c("state", "Character", "The abbreviation state name of US",
+                "numcol", "Numeric", "Number of honey producing colonies",
+                "yieldpercol", "Numeric", "Yield per colony",
+                "totalprod", "Numeric", "Total honey production",
+                "stocks", "Numeric", "Stocks per 1000 pounds",
+                "priceperlb", "Numeric", "Average price per pound",
+                "prodvalue", "Numeric", "value of production per 1000 dollars",
+                "year", "Numeric", "Year of statistics"
+                ), ncol = 3, byrow = TRUE)
+
+colnames(tab) <- c("Variable Name", "Type of the variable", "Description")
+
+tab <- as.table(tab) %>% 
+  kable(caption = "Variable desription")  %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+
+tab
+```
+
+
+## Honey production changing trend by year
+
 
 ```{r datasets, echo = FALSE, message = FALSE, warning = FALSE}
 honey <- read.csv(here::here("data/honeyproduction.csv"))
 
+production <- honey %>%
+  group_by(state) %>%
+  summarise(ave_production = mean(totalprod))%>%
+  arrange(desc(ave_production)) %>%
+  head() %>%
+  mutate("full name" = c("North Dakota",
+                         "California",
+                         "South Dakota",
+                         "Florida",
+                         "Montana",
+                         "Minnesota"))
+
 price <- honey %>%
   group_by(state) %>%
   summarise(ave_price = round(mean(priceperlb), 4))%>%
-  arrange(desc(ave_price)) %>%
-  head() %>%
-  #mutate(order = fct_reorder(state, ave_price)) %>%
-  mutate("full name" = c("Virginia",
-                         "Nevada",
-                         "Illinois",
-                         "Kentucky",
-                         "North Carolina",
-                         "Tennessee"))
+  arrange(desc(ave_price)) 
 ```
 
-```{r productionchart, echo = FALSE, fig.align='center'}
-production <- ggplot(honey,
+```{r productionchart, echo = FALSE, fig.align='center', fig.cap = "Figure 1: Honey production changing trend by year"}
+productionchart <- ggplot(honey,
                      mapping = aes(
                        x = year,
-                       y = log10(totalprod),
+                       y = totalprod,
                        color = state
                        )) +
   geom_line() +
@@ -54,17 +89,74 @@ production <- ggplot(honey,
           2006, 2007, 2008, 2009, 2010, 2011, 2012
           )) +
   theme(axis.text.x = element_text(angle = 45, hjust = 0.5, vjust = 0.5)) +
-  labs(x = "Year", y = "log(Production)")
+  labs(x = "Year", y = "Production")
 
-plotly::ggplotly(production)
+plotly::ggplotly(productionchart)
 ```
-Figure \@ref(fig:productionchart) illustrates that...
+As can be seen in Figure 1, the variation in honey production in each state is highly variable, with many states showing a decreasing trend in honey production overall. It is interesting to note that North Dakota reached a peak in honey production in 2010, which is the highest for any state during the period of 1998-2012. Many of the other states had an upward and then downward trend around 2010.
 
-## Average price of every states
+It is interesting to note that two states, Oklahoma and Maryland, stopped producing honey after 2003, likely due to Colony Collapse Disorder (CCD) and the economic impact of changes in bee health. Colony collapse disorder (CCD) is an abnormal phenomenon that occurs when the majority of worker bees in a honey bee colony disappear, leaving behind a queen, plenty of food, and a few nurse bees to care for the remaining immature bees (OCSPP, 2013). Declining numbers of bees predate CCD by several decades, however: the US managed hive industry has been shrinking at a steady pace since 1961 (Marcelo A.& Lawrence D, 2009).
 
 
 ## Top 6 states with highest production
 
+```{r toptable, echo = FALSE}
+topsix <- production %>% select("full name", ave_production) %>%
+  gt() %>%
+  tab_header(
+    title = md("**Top 6 States With Highest Production**")
+  )
+topsix
+```
+
+The above table shows that the six states with the highest average honey production are **"North Dakota"**, **"California"**, **"South Dakota"**, **"Florida"**, **"Montana"**, **"Minnesota"**.
+
+North Dakota is the largest honey producing state in the U.S. In 2018, the state reported a total of 38.2 million pounds of honey. In 2010, there were approximately 246 registered beekeepers in the state, although this number is growing each year. Each beekeeper manages an average of 1,000 to 1,500 colonies. The average yield per colony is about 78 pounds.
+
+The California honey industry is booming largely due to pollination services. Many beekeepers from North Dakota and Montana move their hives to California in the winter to help with almond pollination. In the last 3 years, honey production in California has increased by over 30% ("Honey industry facts," 2017).
+
+South Dakota, the state has approximately 185 registered beekeepers who manage approximately 280,000 colonies (not including those found in the wild). Most of the honey produced in South Dakota is an alfalfa-sweet clover mixture (the flavor of honey varies depending on the plant the bees come in contact with). Beekeepers and agricultural workers in the state often work together to ensure crop pollination. Usually, there is no fee for this activity, as it is mutually beneficial to both parties. 
+
+Florida is the fourth largest honey-producing state in the U.S. As in South Dakota, beekeepers and agricultural workers work together to provide pollination services, which add about 65 million in value to Florida's crops. The honey produced here typically comes from a variety of fruit trees, a common crop in Florida.
+
+Honey production in Montana state has more than doubled in the last 40 years. It ranks as the 10th most valuable crop with a crop of over 31 million. The honey industry actually pollinates other crops. Montana apiaries can have as many as 30,000 hives, and the cost of pollination alone can bring in more than $6 million annually, not including the honey produced. 
+
+7million lbs of MN honey produced annually, there are 96 Minnesota Grown honey producers, 5% of US honey is produced in MN.
+
+## Average price of every states
+
+```{r aveprice, echo = FALSE, fig.align='center', fig.cap = "Figure 2:Average price of every states "}
+
+aveprice <- usmap::plot_usmap(data = price, values = "ave_price", labels = TRUE) +
+scale_fill_gradient(
+  low = "#EFDECD",
+  high = "#B284BE",
+  space = "Lab",
+  na.value = "grey50",
+  aesthetics = "fill"
+)+
+  labs(fill = "Average Price") +
+  theme(legend.position = "bottom") 
+
+plotly::ggplotly(aveprice)
+
+```
+
+
+## Origin data
+```{r originaldata, echo = FALSE}
+tabledata <- honey
+    DT::datatable(tabledata)
+```
+
+
 ## References
 
+Pariona, A. (2020, June 7). *Leading honey-producing states in the US.* WorldAtlas. https://www.worldatlas.com/articles/leading-honey-producing-states-in-the-us.html
+
+US EPA, OCSPP (29 August 2013). "Colony Collapse Disorder". *US EPA.* Retrieved 18 September 2019.
+
+Aizen, Marcelo A.; Harder, Lawrence D. (9 June 2009). "The Global Stock of Domesticated Honey Bees Is Growing Slower Than Agricultural Demand for Pollination" (PDF). *Current Biology.* 19 (11): 915–918. doi:10.1016/j.cub.2009.03.071. PMID 19427214. S2CID 12353259. Retrieved 10 September 2020.
+
+*Honey industry facts.* (2017, March 6). National Honey Board. https://honey.com/newsroom/presskit/honey-industry-facts
 
