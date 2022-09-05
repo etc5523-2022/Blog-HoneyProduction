@@ -5,5 +5,68 @@
     "title": "U.S. HONEY INDUSTRY REPORT",
     "section": "",
     "text": "Data analysis\n\n\n\n\n\n\n\n\n\n\n\nSep 4, 2022\n\n\nYunzhi Chen\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2022\n\n\nYunzhi Chen\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is a blog template for the ETC5523 Communicating with Data assessment at Monash University."
+  },
+  {
+    "objectID": "posts/analysis/index.html",
+    "href": "posts/analysis/index.html",
+    "title": "Honey production in US by state (1998-2012)",
+    "section": "",
+    "text": "Honey is a thick, golden, naturally occurring sweet substance produced by bees when they gather plant pollen and nectar. The nectar is combined with enzymes produced by the bees and stored in the honeycomb cells. Intracellular water is reduced and the product is concentrated. It has the sweetness of granulated sugar and is composed of monosaccharides and glucose, giving it a unique flavor. Humans have been using honey for at least 8,000 years.\nWhere the most honey is produced each year depends largely on climate, soil, agriculture and politics. Crops grown or grown in an area will definitely play a role in nectar, pesticides and regulations, and it has to do with how many colonies you can put on any given acre without starving in a few months. Government protection programs can also help here. In 2018, the United States was the fifth-largest honey producer in the world, producing 69,104 tons (Pariona, 2020). I would like to examine the honey production data by state in the United States from 1998 to 2012 to explore some interesting facts about production, unit price against time and states, finally to perform some analysis."
+  },
+  {
+    "objectID": "posts/analysis/index.html#data-description",
+    "href": "posts/analysis/index.html#data-description",
+    "title": "Honey production in US by state (1998-2012)",
+    "section": "Data description",
+    "text": "Data description\nThe honey data comes from National Agricultural Statistics Service (NASS), Agricultural Statistics Board, U.S. Department of Agriculture, collected from the website of the https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-05-21. The data set contains information about honey production, honey unit price, and other data for each state in the United States from 1998 to 2012, which has 626 observations and 8 variables.\n\n\n\n\n\n\n\nVariable desription\n \n  \n      \n    Variable Name \n    Type of the variable \n    Description \n  \n \n\n  \n    A \n    state \n    Character \n    The abbreviation state name of US \n  \n  \n    B \n    numcol \n    Numeric \n    Number of honey producing colonies \n  \n  \n    C \n    yieldpercol \n    Numeric \n    Yield per colony \n  \n  \n    D \n    totalprod \n    Numeric \n    Total honey production \n  \n  \n    E \n    stocks \n    Numeric \n    Stocks per 1000 pounds \n  \n  \n    F \n    priceperlb \n    Numeric \n    Average price per pound \n  \n  \n    G \n    prodvalue \n    Numeric \n    value of production per 1000 dollars \n  \n  \n    H \n    year \n    Numeric \n    Year of statistics"
+  },
+  {
+    "objectID": "posts/analysis/index.html#honey-production-changing-trend-by-year",
+    "href": "posts/analysis/index.html#honey-production-changing-trend-by-year",
+    "title": "Honey production in US by state (1998-2012)",
+    "section": "Honey production changing trend by year",
+    "text": "Honey production changing trend by year\n\n\n\n\n\n\n\nFigure 1: Honey production changing trend by year\n\n\nAs can be seen in Figure 1, the variation in honey production in each state is highly variable, with many states showing a decreasing trend in honey production overall. It is interesting to note that North Dakota reached a peak in honey production in 2010, which is the highest for any state during the period of 1998-2012. Many of the other states had an upward and then downward trend around 2010.\nIt is interesting to note that two states, Oklahoma and Maryland, stopped producing honey after 2003, likely due to Colony Collapse Disorder (CCD) and the economic impact of changes in bee health. Colony collapse disorder (CCD) is an abnormal phenomenon that occurs when the majority of worker bees in a honey bee colony disappear, leaving behind a queen, plenty of food, and a few nurse bees to care for the remaining immature bees (OCSPP, 2013). Declining numbers of bees predate CCD by several decades, however: the US managed hive industry has been shrinking at a steady pace since 1961 (Marcelo A.& Lawrence D, 2009)."
+  },
+  {
+    "objectID": "posts/analysis/index.html#top-6-states-with-highest-production",
+    "href": "posts/analysis/index.html#top-6-states-with-highest-production",
+    "title": "Honey production in US by state (1998-2012)",
+    "section": "Top 6 states with highest production",
+    "text": "Top 6 states with highest production\n\n\n\n\n\n\n  \n    \n      Top 6 States With Highest Production\n    \n    \n  \n  \n    \n      full name\n      ave_production\n    \n  \n  \n    North Dakota\n31672333\n    California\n23169000\n    South Dakota\n17742733\n    Florida\n16469867\n    Montana\n10437467\n    Minnesota\n9624000\n  \n  \n  \n\n\n\n\nThe above table shows that the six states with the highest average honey production are “North Dakota”, “California”, “South Dakota”, “Florida”, “Montana”, “Minnesota”.\nNorth Dakota is the largest honey producing state in the U.S. In 2018, the state had 38.2 million pounds of honey. Pariona (2020) states that in 2010, there were approximately 246 registered beekeepers in the state, and that number is growing every year. Each beekeeper manages an average of 1,000 to 1,500 colonies. The average yield per colony is about 78 pounds.\nThe California honey industry is booming largely due to pollination services. Many beekeepers from North Dakota and Montana move their hives to California in the winter to help with almond pollination. Honey production in California has increased by over 30% in the last 3 years (“Honey Industry Facts,” 2017).\nMost of the honey produced in South Dakota is a mixture of alfalfa and sweet clover (the flavor of honey varies depending on the plant the bees are exposed to). Beekeepers and agricultural workers in the state often work together to ensure that crops are pollinated. Usually, there is no charge for this activity, as it benefits both parties.\nFlorida is the fourth largest honey producing state in the United States. As in South Dakota, beekeepers and agricultural workers work together to provide pollination services that add an estimated $65 million in value to Florida’s crops. The honey produced here typically comes from a variety of fruit trees, a common crop in Florida.\nIn the last 40 years, Montana’s honey production has more than doubled. The honey industry actually pollinates other crops. Montana apiaries can have as many as 30,000 hives and the cost of pollination alone can bring in over $6 million annually, not including the honey produced.\nMinnesota produces 7 million pounds of honey each year and is home to 96 well known honey producers, with 5% of all honey produced in the United States coming from Minnesota."
+  },
+  {
+    "objectID": "posts/analysis/index.html#average-price-of-every-states",
+    "href": "posts/analysis/index.html#average-price-of-every-states",
+    "title": "Honey production in US by state (1998-2012)",
+    "section": "Average price of every states",
+    "text": "Average price of every states\n\n\n\n\nFigure 2:Average price of every states\n\n\nFrom figure2, we can see that the majority of states have honey prices below 1.25 cents per pound, with the highest average unit prices in “Nevada”, “Illinois”, “Kentucky”, “Virginia”, “Tennessee”, and “North Carolina”. We can see that the top 5 states are all located on the west coast, where the wealthy gather and prices are higher than elsewhere, so we can understand why most of the states with higher honey unit prices are concentrated in this area of the map.\nIn the case of North Carolina, the reason for the high honey prices may be due to the high quality of the honey produced in this state and the correspondingly higher honey prices."
+  },
+  {
+    "objectID": "posts/analysis/index.html#origin-data",
+    "href": "posts/analysis/index.html#origin-data",
+    "title": "Honey production in US by state (1998-2012)",
+    "section": "Origin data",
+    "text": "Origin data"
+  },
+  {
+    "objectID": "posts/analysis/index.html#references",
+    "href": "posts/analysis/index.html#references",
+    "title": "Honey production in US by state (1998-2012)",
+    "section": "References",
+    "text": "References\nPariona, A. (2020, June 7). Leading honey-producing states in the US. WorldAtlas. https://www.worldatlas.com/articles/leading-honey-producing-states-in-the-us.html\nUS EPA, OCSPP (29 August 2013). “Colony Collapse Disorder”. US EPA. Retrieved 18 September 2019.\nAizen, Marcelo A.; Harder, Lawrence D. (9 June 2009). “The Global Stock of Domesticated Honey Bees Is Growing Slower Than Agricultural Demand for Pollination” (PDF). Current Biology. 19 (11): 915–918. doi:10.1016/j.cub.2009.03.071. PMID 19427214. S2CID 12353259. Retrieved 10 September 2020.\nHoney industry facts. (2017, March 6). National Honey Board. https://honey.com/newsroom/presskit/honey-industry-facts\nWickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E, Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi K, Vaughan D, Wilke C, Woo K, Yutani H (2019). “Welcome to the tidyverse.” Journal of Open Source Software, 4(43), 1686. doi:10.21105/joss.01686 https://doi.org/10.21105/joss.01686.\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.\nXie Y, Cheng J, Tan X (2022). DT: A Wrapper of the JavaScript Library ‘DataTables’. R package version 0.24, https://CRAN.R-project.org/package=DT.\nC. Sievert. Interactive Web-Based Data Visualization with R, plotly, and shiny. Chapman and Hall/CRC Florida, 2020.\nHao Zhu (2021). kableExtra: Construct Complex Table with ‘kable’ and Pipe Syntax. R package version 1.3.4. https://CRAN.R-project.org/package=kableExtra\nRichard Iannone, Joe Cheng, Barret Schloerke and Ellis Hughes (2022). gt: Easily Create Presentation-Ready Display Tables. R package version 0.7.0. https://CRAN.R-project.org/package=gt\nPaolo Di Lorenzo (2022). usmap: US Maps Including Alaska and Hawaii. R package version 0.6.0. https://CRAN.R-project.org/package=usmap"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!"
   }
 ]
