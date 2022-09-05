@@ -1,7 +1,7 @@
 ---
 title: "Honey production in US by state (1998-2012)"
 author: "Yunzhi Chen"
-date: "2022-09-03"
+date: "2022-09-04"
 categories: Data analysis
 image: "honey.jpg"
 toc: true
@@ -11,7 +11,7 @@ toc: true
 
 Honey is a thick, golden, naturally occurring sweet substance produced by bees when they gather plant pollen and nectar. The nectar is combined with enzymes produced by the bees and stored in the honeycomb cells. Intracellular water is reduced and the product is concentrated. It has the sweetness of granulated sugar and is composed of monosaccharides and glucose, giving it a unique flavor. Humans have been using honey for at least 8,000 years.
 
-Where the most honey is produced each year depends largely on climate, soil, agriculture and politics. Crops grown or grown in an area will definitely play a role in nectar, pesticides and regulations, and it has to do with how many colonies you can put on any given acre without starving in a few months. Government protection programs can also help here. In 2018, the United States was the fifth-largest honey producer in the world, producing 69,104 tons (Pariona, 2020).
+Where the most honey is produced each year depends largely on climate, soil, agriculture and politics. Crops grown or grown in an area will definitely play a role in nectar, pesticides and regulations, and it has to do with how many colonies you can put on any given acre without starving in a few months. Government protection programs can also help here. In 2018, the United States was the fifth-largest honey producer in the world, producing 69,104 tons (Pariona, 2020). I would like to examine the honey production data by state in the United States from 1998 to 2012 to explore some interesting facts about production, unit price against time and states, finally to perform some analysis.
 
 ## Data description
 
@@ -109,17 +109,17 @@ topsix
 
 The above table shows that the six states with the highest average honey production are **"North Dakota"**, **"California"**, **"South Dakota"**, **"Florida"**, **"Montana"**, **"Minnesota"**.
 
-North Dakota is the largest honey producing state in the U.S. In 2018, the state reported a total of 38.2 million pounds of honey. In 2010, there were approximately 246 registered beekeepers in the state, although this number is growing each year. Each beekeeper manages an average of 1,000 to 1,500 colonies. The average yield per colony is about 78 pounds.
+North Dakota is the largest honey producing state in the U.S. In 2018, the state had 38.2 million pounds of honey. Pariona (2020) states that in 2010, there were approximately 246 registered beekeepers in the state, and that number is growing every year. Each beekeeper manages an average of 1,000 to 1,500 colonies. The average yield per colony is about 78 pounds.
 
-The California honey industry is booming largely due to pollination services. Many beekeepers from North Dakota and Montana move their hives to California in the winter to help with almond pollination. In the last 3 years, honey production in California has increased by over 30% ("Honey industry facts," 2017).
+The California honey industry is booming largely due to pollination services. Many beekeepers from North Dakota and Montana move their hives to California in the winter to help with almond pollination. Honey production in California has increased by over 30% in the last 3 years ("Honey Industry Facts," 2017).
 
-South Dakota, the state has approximately 185 registered beekeepers who manage approximately 280,000 colonies (not including those found in the wild). Most of the honey produced in South Dakota is an alfalfa-sweet clover mixture (the flavor of honey varies depending on the plant the bees come in contact with). Beekeepers and agricultural workers in the state often work together to ensure crop pollination. Usually, there is no fee for this activity, as it is mutually beneficial to both parties. 
+Most of the honey produced in South Dakota is a mixture of alfalfa and sweet clover (the flavor of honey varies depending on the plant the bees are exposed to). Beekeepers and agricultural workers in the state often work together to ensure that crops are pollinated. Usually, there is no charge for this activity, as it benefits both parties.
 
-Florida is the fourth largest honey-producing state in the U.S. As in South Dakota, beekeepers and agricultural workers work together to provide pollination services, which add about 65 million in value to Florida's crops. The honey produced here typically comes from a variety of fruit trees, a common crop in Florida.
+Florida is the fourth largest honey producing state in the United States. As in South Dakota, beekeepers and agricultural workers work together to provide pollination services that add an estimated $65 million in value to Florida's crops. The honey produced here typically comes from a variety of fruit trees, a common crop in Florida.
 
-Honey production in Montana state has more than doubled in the last 40 years. It ranks as the 10th most valuable crop with a crop of over 31 million. The honey industry actually pollinates other crops. Montana apiaries can have as many as 30,000 hives, and the cost of pollination alone can bring in more than $6 million annually, not including the honey produced. 
+In the last 40 years, Montana's honey production has more than doubled. The honey industry actually pollinates other crops. Montana apiaries can have as many as 30,000 hives and the cost of pollination alone can bring in over $6 million annually, not including the honey produced.
 
-7million lbs of MN honey produced annually, there are 96 Minnesota Grown honey producers, 5% of US honey is produced in MN.
+Minnesota produces 7 million pounds of honey each year and is home to 96 well known honey producers, with 5% of all honey produced in the United States coming from Minnesota.
 
 ## Average price of every states
 
