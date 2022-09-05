@@ -1,0 +1,23 @@
+/* css styles */
+.navbar-dark, .quarto-title-banner {
+  background-color: #72A0C1;
+}
+
+h1 {
+  color: #F1EB95;
+  text-shadow: 1px 2px 2px #FF9900;
+  font-size: 3em;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+h2 {
+  color: #FF9900;
+  text-shadow: 1px 2px 2px #FF9900;
+}
+
+h3 {
+  color: #FF9900;
+  text-shadow: 1px 2px 2px #FF9900;
+}
